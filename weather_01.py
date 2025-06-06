@@ -7,7 +7,7 @@ load_dotenv()
 # Get the API key
 api_key = os.getenv("OPENWEATHER_API_KEY")
 
-# Function to fetch weather data
+# Function to get weather data
 def get_weather(city):
     url = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}&units=metric"
     response = requests.get(url)
@@ -16,7 +16,7 @@ def get_weather(city):
     else:
         return None
 
-# Streamlit UI
+# UI
 st.title("🌤️ Real-Time Weather App")
 st.write("Enter a city name to get the current weather information.")
 
@@ -38,3 +38,5 @@ if st.button("Get Weather"):
         st.write(f"💨 Wind Speed: {wind} m/s")
     else:
         st.error("City not found or API error.")
+        
+#Run  python -m streamlit run "c:/Users/shlok/OneDrive/Desktop/My Projects/Weather/weather_01.py" in terminal
